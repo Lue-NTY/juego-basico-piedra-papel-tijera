@@ -6,10 +6,6 @@ class Persona {
     this.nombre = nombre;
     this.edad = edad;
   }
-
-  saludar() {
-    console.log(`Hola, soy ${this.nombre} y tengo ${this.edad} años.`);
-  }
 }
 
 const persona1 = new Persona(
@@ -51,7 +47,7 @@ function juego(seleccion) {
     console.log(
       ` !Empate¡ \n ${seleccion} y ${bot} Son Iguales. ||Puntos: ${puntos}`
     );
-  } else if (seleccion == "piedra") {
+  } else if (seleccion.toLowerCase() == "piedra") {
     if (bot == "papel") {
       console.log(`     JUEGOS TERMINADO....`);
       console.log(` !Peldiste oe¡ 🤣`.red);
@@ -61,7 +57,7 @@ function juego(seleccion) {
       console.log(` |Puntos|`.magenta);
       console.log(` |  ${++puntos}|`.magenta);
     }
-  } else if (seleccion == "papel") {
+  } else if (seleccion.toLowerCase() == "papel") {
     if (bot == "tijera") {
       console.log(`     JUEGOS TERMINADO....`);
       console.log(` !Peldiste pa¡ 🤣`.red);
@@ -72,7 +68,7 @@ function juego(seleccion) {
       console.log(` |Puntos|`.magenta);
       console.log(` |  ${++puntos}|`.magenta);
     }
-  } else if (seleccion == "tijera") {
+  } else if (seleccion.toLowerCase() == "tijera") {
     if (bot == "piedra") {
       console.log(`     JUEGOS TERMINADO....`);
       console.log(` !Peldiste pa¡ 🤣`.red);
@@ -91,14 +87,14 @@ function juego(seleccion) {
 let opcion = prompt(" Elige una opción: tijera, piedra, papel: ");
 juego(opcion);
 while (true) {
-  let seguir = prompt("¿Quieres Seguir? si o no: ");
+  let seguir = prompt("¿Quieres continuar? si o no: ");
 
-  if (seguir == "si") {
+  if (seguir.toLowerCase() == "si") {
     let opcion = prompt(" Elige una opción: tijera, piedra, papel: ");
     juego(opcion);
     continue;
   } else {
-    console.log("Juego Finalizado.");
+    console.log("Juego Finalizado 👻.");
     break;
   }
 }
